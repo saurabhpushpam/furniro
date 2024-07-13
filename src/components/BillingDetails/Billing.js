@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaCircle } from "react-icons/fa";
+import { FaRegCircle } from "react-icons/fa";
 
 const Billing = () => {
   return (
@@ -57,18 +59,53 @@ const Billing = () => {
             <div className='billing-order-detail'>
               <div className='billing-detail-bill'>
                 <div className='billing-detail-product'>
-                  <p>Product</p>
+                  <p className='billing-text-product'>Product</p>
                   <div className='billing-product-name'>
-                    <p>Asgaard sofa </p>
-                    <p>X 1</p>
+                    <p className='billing-product-text'>Asgaard sofa </p>
+                    <p className='billing-quantity'>X &nbsp;1</p>
                   </div>
-                  <p></p>
-                  <p></p>
+                  <p className='billing-text-total'>Subtotal</p>
+                  <p className='billing-text-total'>Total</p>
                 </div>
-                <div className='billing-detail-subtotal'></div>
+                <div className='billing-detail-subtotal'>
+                  <p className='billing-text-product'>Subtotal</p>
+                  <p className='billing-text-price'>Rs. 250,000.00</p>
+                  <p className='billing-text-price'>Rs. 250,000.00</p>
+                  <p className='billing-text-totalprice'>Rs. 250,000.00</p>
+                </div>
               </div>
-              <div className='billing-detail-desc'></div>
-              <div className='billing-detail-btn'></div>
+              <div className='billing-detail-desc'>
+                <div className='billing-desc-upper'>
+                  <div className='bill-direct-order'>
+                    <FaCircle />
+                    <p className='bill-direct-order-text'> &nbsp; &nbsp;Direct Bank Transfer</p>
+                  </div>
+                  <p className='bill-desc-upper-text'>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                </div>
+                <div className='billing-desc-middle'>
+                  {/* <ul>
+                    <li className='bill-desc-middle-list'>Direct Bank Transfer</li>
+                    <li className='bill-desc-middle-list'>Cash On Delivery</li>
+                  </ul> */}
+
+                  <div className='bill-direct-order'>
+                    <FaRegCircle className='circle-logo'></FaRegCircle>
+                    <div className='bill-middle-order-text'> &nbsp; &nbsp;Direct Bank Transfer</div>
+                  </div>
+
+                  <div className='bill-direct-order'>
+                    <FaRegCircle className='circle-logo'></FaRegCircle>
+                    <div className='bill-middle-order-text'> &nbsp; &nbsp;Cash On Delivery</div>
+                  </div>
+
+                </div>
+                <div className='billing-desc-bottom'>
+                  <p className='bill-desc-bottom-text'>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <span className='bill-bottom-privacy'>privacy policy.</span></p>
+                </div>
+              </div>
+              <div className='billing-detail-btn'>
+                <button className='bill-btn-placeorder'>Place order</button>
+              </div>
             </div>
           </div>
         </div>
