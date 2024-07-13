@@ -3,6 +3,14 @@ import { FaCircle } from "react-icons/fa";
 import { FaRegCircle } from "react-icons/fa";
 
 const Billing = () => {
+
+
+  // const options = [
+  //   { id: 1, value: 'India', label: 'India' },
+  //   { id: 2, value: 'Sri Lanka', label: 'Sri Lanka' },
+  // ]
+
+
   return (
     <>
       <div className='billing-main'>
@@ -26,6 +34,23 @@ const Billing = () => {
             <div className='billing-country'>
               <p className='billing-all-text'>Country / Region</p>
               <input className='billing-all-input' placeholder="Sri Lanka"></input>
+
+
+
+              {/* <select options={options} placeholder="Sri Lanka" className='billing-country-input'>
+                <option className='billing-country-input-option' value="" disabled selected hidden>
+                  Sri Lanka
+                </option>
+                {options.map((option) => (
+                  <option key={option.id} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select> */}
+
+
+
+
             </div>
             <div className='billing-street'>
               <p className='billing-all-text'>Street address</p>
