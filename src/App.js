@@ -4,6 +4,7 @@ import Home from './components/home/Home';
 import Footer from './navbar/Footer';
 import Header from './navbar/Header';
 import Shop from './components/Shop/Shop';
+import CheckOut from './components/BillingDetails/CheckOut';
 
 
 
@@ -15,7 +16,8 @@ function App() {
       </Router> */}
       <Header></Header>
       {/* <Home></Home> */}
-      <Shop></Shop>
+      {/* <Shop></Shop> */}
+      <CheckOut></CheckOut>
       <Footer></Footer>
     </>
   );

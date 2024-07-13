@@ -2,6 +2,7 @@ import React from 'react'
 import ShopTitle from './ShopTitle'
 import ShopFilter from './ShopFilter'
 import ShopProductList from './ShopProductList'
+import WarrantyDetail from './WarrantyDetail'
 
 
 const Shop = () => {
@@ -10,6 +11,7 @@ const Shop = () => {
       <ShopTitle></ShopTitle>
       <ShopFilter></ShopFilter>
       <ShopProductList></ShopProductList>
+      <WarrantyDetail></WarrantyDetail>
     </>
   )
 }
