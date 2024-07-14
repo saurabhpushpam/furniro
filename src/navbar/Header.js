@@ -5,6 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Link } from 'react-router-dom'
 
 
 // // import Container from 'react-bootstrap/Container';
@@ -31,10 +32,16 @@ const Header = () => {
 
           <div className='head-link'>
 
-            <p className='head-link-title'>Home</p>
-            <p className='head-link-title'>Shop</p>
-            <p className='head-link-title'>About</p>
-            <p className='head-link-title'>Contact</p>
+
+            <Link className='head-link-title' to={"/"}>Home</Link>
+            <Link className='head-link-title' to={"/shop"}>Shop</Link>
+            <Link className='head-link-title' to={"/cart"}>About</Link>
+            <Link className='head-link-title' to={"/contact"}>Contact</Link>
+
+            {/* <p className='head-link-title'>Home</p> */}
+            {/* <p className='head-link-title'>Shop</p> */}
+            {/* <p className='head-link-title'>About</p> */}
+            {/* <p className='head-link-title'>Contact</p> */}
 
           </div>
 
@@ -43,7 +50,9 @@ const Header = () => {
             <FaUser className='head-icon' />
             <FiSearch className='head-icon' />
             <FaRegHeart className='head-icon' />
-            <AiOutlineShoppingCart className='head-icon' />
+            {/* <AiOutlineShoppingCart className='head-icon' /> */}
+
+            <Link className='head-link-icon' to={"/cart"}><AiOutlineShoppingCart className='head-icon' /></Link>
 
           </div>
 
