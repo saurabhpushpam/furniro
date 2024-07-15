@@ -260,6 +260,8 @@ line-height: 30px;
 
 
 
+
+
 /* for ShopProductList.js */
 
 
@@ -585,6 +587,55 @@ justify-content: center;
 
 
 
+     /* Responsive CSS for screen sizes 200px to 500px */
+@media screen and (min-width: 200px) and (max-width: 500px) {
+  .ourproduct-main {
+    width: 95%;
+  }
+
+  .ourproduct-card {
+    width: 48%;
+    height: 50vh;
+  }
+
+  .ourproduct-card-img {
+    height: 60%;
+  }
+}
+
+/* Responsive CSS for screen sizes 500px to 800px */
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .ourproduct-main {
+    width: 85%;
+  }
+
+  .ourproduct-card {
+    width: 31%;
+    height: 55vh;
+  }
+
+  .ourproduct-card-img {
+    height: 60%;
+  }
+}
+
+/* Responsive CSS for screen sizes 800px to 1000px */
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .ourproduct-main {
+    width: 75%;
+  }
+
+  .ourproduct-card {
+    width: 23%;
+    height: 60vh;
+  }
+
+  .ourproduct-card-img {
+    height: 67%;
+  }
+}
+
+
 
 
 
@@ -682,3 +733,46 @@ justify-content: center;
      
 
     
+
+
+
+     /* responsive css */
+
+     @media screen and (max-width: 1000px) {
+      .warrantydetail {
+        flex-direction: column;
+        height: auto;
+      }
+    
+      .quality {
+        width: 45%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    
+      .aboutdata-title {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    
+      .aboutdata-desc {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    
+    @media screen and (max-width: 800px) {
+      .quality {
+        width: 65%;
+      }
+    }
+    
+    @media screen and (max-width: 500px) {
+      .quality {
+        width: 85%;
+      }
+    
+      .datalogo {
+        width: 20%;
+      }
+    }

@@ -155,3 +155,51 @@ padding-left: 10px;
   border:none;
   border-radius: 5px;
 }
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .apw-header,
+  .nas-header {
+    width: 80%;
+  }
+  
+  .desc-part {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .desc-iocn {
+    width: 30%;
+  }
+  
+  .desc-desc {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .apw-header,
+  .nas-header {
+    width: 100%;
+  }
+  
+  .desc-part {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .desc-iocn {
+    width: 30%;
+  }
+  
+  .desc-desc {
+    width: 70%;
+  }
+  
+  .head-2 {
+    text-align: center;
+    font-size: 14px;
+  }
+}
