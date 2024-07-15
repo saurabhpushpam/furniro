@@ -11,16 +11,39 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* for Product.js  */
+
+
+ul{
+  padding: 0;
+  list-style: none;
+  margin:0;
+}
+
+
+
+.bubble{
+  position: absolute;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  height: 3rem;
+  width: 3rem;
+  background-color: #E97171;
+  border-radius:50%;
+  left: 75%;
+  top: 5%;
+}
+
+.new{
+  background-color: #2EC1AC;
+}
+
+
+
+
 
 .prod-header{
   background-color: #F9F1E7;
