@@ -35,7 +35,8 @@ const Header = () => {
 
             <Link className='head-link-title' to={"/"}>Home</Link>
             <Link className='head-link-title' to={"/shop"}>Shop</Link>
-            <Link className='head-link-title' to={"/cart"}>About</Link>
+            {/* <Link className='head-link-title' to={"/cart"}>About</Link> */}
+            <Link className='head-link-title' to={"/"}>About</Link>
             <Link className='head-link-title' to={"/contact"}>Contact</Link>
 
             {/* <p className='head-link-title'>Home</p> */}

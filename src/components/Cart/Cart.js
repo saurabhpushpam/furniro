@@ -6,8 +6,10 @@ import cartimg from '../../images/Asgaard sofa 5.png'
 import { TbTrashFilled } from "react-icons/tb";
 import HeaderTwo from './HeaderTwo'
 import WarrantyDetail from '../Shop/WarrantyDetail';
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
+
   return (
     <>
       <div>
@@ -76,7 +78,8 @@ export default function Cart() {
 
               <div className='cart-checkout-button'>
                 <button className='cart-button'>
-                  Check Out
+                  <Link className='head-link-title' to={"/checkout"}>Check Out</Link>
+                  {/* Check Out */}
                 </button>
 
               </div>
