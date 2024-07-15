@@ -77,10 +77,10 @@ export default function Cart() {
 
 
               <div className='cart-checkout-button'>
-                <button className='cart-button'>
-                  <Link className='head-link-title' to={"/checkout"}>Check Out</Link>
-                  {/* Check Out */}
-                </button>
+                {/* <button className='cart-button'> */}
+                <Link className='head-link-title' to={"/checkout"}><button className='cart-button'>Check Out</button></Link>
+                {/* Check Out */}
+                {/* </button> */}
 
               </div>
 
