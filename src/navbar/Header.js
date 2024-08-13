@@ -1,28 +1,77 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import './header.css';
 import House_Logo from '../images/House_Logo.png'
 import { FaUser } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-
-// // import Container from 'react-bootstrap/Container';
-// // import Nav from 'react-bootstrap/Nav';
-// // import Navbar from 'react-bootstrap/Navbar';
-
-
-// // import { Link } from 'react-router-dom';
 
 
 const Header = () => {
+
+  const navigate = useNavigate();
+  const [user, setUser] = useState([]);
+
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        // Retrieve the token from local storage
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+          console.error('No token found');
+          return;
+        }
+
+        // Fetch user data using the token
+        const response = await axios.get('http://localhost:5000/api/getuserdatabytoken', {
+          headers: { Authorization: `${token}` }
+        });
+
+        const userData = response.data.data;
+        setUser(userData);
+        console.log('userdata', userData.usertype);
+
+        // Extract user ID
+        // const usertype = userData.usertype;
+
+
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+
+  const handleUserIconClick = () => {
+    if (user) {
+      if (user.usertype === 'admin') {
+        navigate('/user');
+      } else {
+        navigate('/userdetail');
+      }
+    } else {
+      console.error('User data is not available');
+    }
+  };
+
+
+  const handlenavigate = () => {
+    navigate('/');
+  }
+
   return (
     <>
       <div className='head-top'>
         <div className='head-container'>
 
-          <div className='head-logo'>
+          <div className='head-logo' onClick={handlenavigate}>
 
             <img src={House_Logo} alt="House Logo" className='head-img' />
             <p className='head-title'>Furniro</p>
@@ -48,7 +97,12 @@ const Header = () => {
 
           <div className='head-symbol'>
 
-            <FaUser className='head-icon' />
+            {/* <Link to={"/user"} style={{ color: 'black' }}><FaUser className='head-icon' /></Link> */}
+
+            <span onClick={handleUserIconClick} style={{ color: 'black', cursor: 'pointer' }}>
+              <FaUser className='head-icon' />
+            </span>
+
             <FiSearch className='head-icon' />
             <FaRegHeart className='head-icon' />
             {/* <AiOutlineShoppingCart className='head-icon' /> */}

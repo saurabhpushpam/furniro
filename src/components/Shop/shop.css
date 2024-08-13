@@ -44,6 +44,7 @@
   font-size: 16px;
   line-height: 24px;
   color: #000000;
+  text-decoration: none;
 }
 
 .shop-title-breadcrumb-next{
@@ -320,6 +321,7 @@ line-height: 30px;
   /* align-items: center;
   justify-content: center; */
   flex-direction: column;
+  cursor: pointer;
 
 
   /* border: 2px solid green; */
@@ -330,50 +332,37 @@ line-height: 30px;
     height: 67%;
     width: 100%;
 
+    position: relative;
+    overflow: hidden;
+
     
     background-repeat: no-repeat;
     background-size: cover; /* This ensures the image covers the entire div */
     background-position: center; /* This centers the image */
-
+/* 
     display: flex;
-    justify-content: end;
+    justify-content: end; */
 
    /* position: relative;  */ /* Ensure the inner div is positioned relative to this parent */
 
     /* border: 2px solid blue; */
  }
 
- #ourproduct-card-img1{
-  background-image: url('../../images/image\ 1\ \(1\).png');
- }
 
- #ourproduct-card-img2{
-  background-image: url('../../images/Images.png');
- }
+ .ourproduct-card-img-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 
- #ourproduct-card-img3{
-  background-image: url('../../images/image\ 3.png');
- }
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center; 
 
- #ourproduct-card-img4{
-  background-image: url('../../images/image\ 4.png');
- }
+  /* border: 2px solid green; */
 
- #ourproduct-card-img5{
-  background-image: url('../../images/Image\ 5.png');
- }
+}
 
- #ourproduct-card-img6{
-  background-image: url('../../images/image\ 6.png');
- }
-
- #ourproduct-card-img7{
-  background-image: url('../../images/image\ 7.png');
- }
-
- #ourproduct-card-img8{
-  background-image: url('../../images/image\ 8.png');
- }
 
 .ourproduct-card-discount{
   width: 48px;
@@ -387,6 +376,11 @@ line-height: 30px;
   display: flex;
   /* align-items: center; */
   justify-content: center;
+
+
+  position: absolute;
+
+  z-index: 1;
 
  /* position: absolute;  */ /*Position the child div absolutely within the parent*/
   /*  top: 0;
@@ -440,6 +434,9 @@ line-height: 30px;
 .ourproduct-about-title{
   display: flex;
   flex-direction: column;
+
+  width: 90%;
+  margin-left: 5%;
   
 }
 
@@ -466,6 +463,9 @@ line-height: 30px;
 .ourproduct-about-price{
   display: flex;
   gap: 15px;
+
+  width: 90%;
+  margin-left: 5%;
 }
 
 .ourproduct-aboutcard-newrs{

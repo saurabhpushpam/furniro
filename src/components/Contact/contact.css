@@ -69,6 +69,10 @@
 .desc-iocn{
   width: 30%;
   height: 100%;
+  text-align: end;
+  margin-right: 25px;
+
+  
   /* border:2px solid rgb(7, 12, 170); */
 }
 .desc-desc
@@ -112,6 +116,9 @@
   align-items: end ;
   
 }
+
+
+
 .inputs text{
   color: #000000;
   font-size: 16px;
@@ -133,7 +140,7 @@
   font-size: 16px;
   font-weight: 400;
   font-family: Poppins;
-  
+ 
 }
 .input-text::placeholder{
 padding-left: 10px;

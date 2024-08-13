@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.css";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -6,7 +6,44 @@ import { BsFillClockFill } from "react-icons/bs";
 import CommonHeader from "./CommonHeader";
 import WarrantyDetail from "../Shop/WarrantyDetail";
 
+import axios from 'axios';
+
+
 export default function Contact() {
+
+  const [name, setname] = useState('');
+  const [email, setemail] = useState('');
+  const [subject, setsubject] = useState('');
+
+  const handleSubmit = async () => {
+    const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
+    if (!token) {
+      console.error('No token found');
+      return;
+    }
+    try {
+      const response = await axios.post('http://localhost:5000/api/addcontact', {
+        name,
+        email,
+        subject
+
+      }
+        , {
+          headers: {
+            // Authorization: `Bearer ${token}`
+            Authorization: `${token}`
+          }
+        });
+      console.log(response.data);
+      setname('');
+      setemail('');
+      setsubject('');
+
+    } catch (error) {
+      console.error('There was an error sending the data!', error);
+    }
+  };
+
   return (
     <>
       <div >
@@ -96,26 +133,33 @@ export default function Contact() {
               <div className="input-fields">
                 <div className="inputs">
                   <text>Your Name </text>
-                  <input className="input-text" placeholder="Abc"></input>
+
+                  {/* The value attribute in the input element binds the input field's value to the state variable 'name'. This means that whatever is stored in the 'name' state variable will be displayed in the input field. */}
+
+                  <input className="input-text" placeholder="Abc" value={name}
+                    onChange={(e) => setname(e.target.value)}></input>
                 </div>
 
                 <div className="inputs">
-                  <text>Your Name </text>
-                  <input className="input-text" placeholder="Abc"></input>
+                  <text>Email address </text>
+                  <input className="input-text" placeholder="Abc" value={email}
+                    onChange={(e) => setemail(e.target.value)}></input>
                 </div>
 
                 <div className="inputs">
-                  <text>Your Name </text>
-                  <input className="input-text" placeholder="Abc"></input>
+                  <text>Subject</text>
+                  <input className="input-text" placeholder="Abc" value={subject}
+                    onChange={(e) => setsubject(e.target.value)}></input>
                 </div>
 
 
               </div>
 
               <div className="input-button">
-                <div className="input-button-inner"> <button>
-                  Submit
-                </button> </div>
+                <div className="input-button-inner">
+                  <button onClick={handleSubmit}>
+                    Submit
+                  </button> </div>
 
 
               </div>

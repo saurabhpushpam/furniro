@@ -10,7 +10,9 @@ const Home = () => {
     <>
       <Topbanner></Topbanner>
       <Secondbanner></Secondbanner>
-      <OurProducts></OurProducts>
+      <div id="moveto-our-products-section">
+        <OurProducts></OurProducts>
+      </div>
       <ExploreMore></ExploreMore>
       <ShareYourSetup></ShareYourSetup>
     </>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './shop.css'
 
 const ShopTitle = () => {
@@ -7,7 +8,7 @@ const ShopTitle = () => {
       <div className='shop-title-text'>
         <p className='shop-title-shop'>Shop</p>
         <div className='shop-title-breadcrumb-route'>
-          <p className='shop-title-breadcrumb'>Home &gt; </p>
+          <Link to={'/'} className='shop-title-breadcrumb'>Home  &gt;</Link>
           <p className='shop-title-breadcrumb-next'>&nbsp; Shop</p>
         </div>
       </div>

@@ -28,6 +28,8 @@
   align-items: center;
   justify-content: start;
 
+  cursor: default;
+
   /* border: 5px solid peru; */
 
 }

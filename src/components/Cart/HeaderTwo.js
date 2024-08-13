@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HeaderTwo.css'
 import logo from '../../images/House_Logo.png'
 export default function HeaderTwo() {
@@ -9,7 +10,8 @@ export default function HeaderTwo() {
           <div><img src={logo} alt=''></img></div>
           <p className='shop-title-shop'>Cart</p>
           <div className='shop-title-breadcrumb-route'>
-            <p className='shop-title-breadcrumb'>Home &gt; </p>
+            {/* <p className='shop-title-breadcrumb'>Home &gt; </p> */}
+            <Link to={'/'} className='shop-title-breadcrumb'>Home  &gt;</Link>
             <p className='shop-title-breadcrumb-next'>&nbsp; Cart</p>
           </div>
         </div>
