@@ -64,7 +64,7 @@ const GetProductVarient = () => {
               className="product-image"
             />
             <div className="product-info">
-              <h3>{product.productid.productName}</h3>
+              <h2> {product.productid.productname}</h2>
               <p><b>Price: </b>${product.price}</p>
               <p><b>Size: </b>{product.size}</p>
               <p><b>Color: </b>{product.color}</p>

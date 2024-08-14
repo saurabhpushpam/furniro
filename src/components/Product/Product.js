@@ -363,6 +363,9 @@ function Product() {
         },
       });
       alert('Product added to cart');
+
+      navigate('/cart');
+
     } catch (error) {
       console.error('Error adding to cart:', error);
     }
@@ -417,13 +420,14 @@ function Product() {
                 src={`http://localhost:5000/api/getproductvarientimage/${image}`}
                 alt={`side-image-${index}`}
                 onClick={() => handleImageClick(index)}
-                style={{ cursor: 'pointer', backgroundPosition: "center", backgroundSize: "cover" }}
+                style={{ width: "5vw", height: "10vh", borderRadius: "0.5rem" }}
+              // style={{ cursor: 'pointer', backgroundPosition: "center", backgroundSize: "cover" }}
               />
             ))}
           </div>
-          <div className="image-active" style={{ marginLeft: "10px" }}>
+          <div className="image-active" style={{ marginLeft: "25px" }}>
             <img
-              style={{ width: "25vw", height: "70vh" }}
+              style={{ width: "30vw", height: "70vh", borderRadius: "0.5rem" }}
               src={`http://localhost:5000/api/getproductvarientimage/${productDetails.image[0]}`}
               alt="active"
             />
@@ -448,9 +452,9 @@ function Product() {
 
         <div className="product-desc">
           {/* <h2>#Product Name</h2> */}
-          <h2>{productDetails.productid.productname}</h2>
+          <h2 style={{ marginLeft: "-30vw" }}>{productDetails.productid.productname}</h2>
           {/* <p style={{ color: '#9F9F9F' }}>#Product Price</p> */}
-          <p style={{ color: '#9F9F9F' }}>Rs.{productDetails.price}</p>
+          <p style={{ color: '#9F9F9F', marginLeft: "-40vw" }}>Rs.{productDetails.price}</p>
           <div
             style={{
               display: "flex",
@@ -574,12 +578,12 @@ function Product() {
               {/* {product.isNew && <div className="bubble new">New</div>} */}
               {/* <img className='img-fluid' src={img1} alt={product.name} /> */}
 
-              <img className='img-fluid' src={`${product.imageUrl}`} alt={product.productid.name} style={{ width: "20vw", height: "30vh" }} />
+              <img className='img-fluid' src={`${product.imageUrl}`} alt={product.productid.name} style={{ width: "20vw", height: "40vh" }} />
               <div className="r-prod-desc">
                 <ul>
                   <li>{product.productid.productname}</li>
-                  <li>Size : <span>{product.size}</span></li>
-                  <li>{product.price} <span>{product.oldprice}</span></li>
+                  <li>Size : {product.size}</li>
+                  <li>Rs{product.price} <span>Rs{product.oldprice}</span></li>
                 </ul>
               </div>
             </div>

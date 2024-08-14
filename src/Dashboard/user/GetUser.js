@@ -34,6 +34,7 @@ const GetUser = () => {
         <h2><b style={{ color: "white" }}>UserName </b></h2>
         <p><b style={{ color: "white" }}>Email </b> </p>
         <p><b style={{ color: "white" }}>Phone </b></p>
+        <p><b style={{ color: "white" }}>UserType </b></p>
       </div>
 
       {users.map((user) => (
@@ -41,6 +42,7 @@ const GetUser = () => {
           <h2>{`${user.firstname} ${user.lastname}`}</h2>
           <p> {user.email}</p>
           <p> {user.phone}</p>
+          <p> {user.usertype}</p>
         </div>
       ))}
     </div>

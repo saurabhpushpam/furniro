@@ -330,7 +330,7 @@ const OurProducts = () => {
                   </div>
                   <div className='ourproduct-about-price'>
                     <p className='ourproduct-aboutcard-newrs'>Rp {product.price}</p>
-                    <p className='ourproduct-aboutcard-oldrs'>Rp {product.oldprice}</p>
+                    <p className='ourproduct-aboutcard-oldrs'> {product.oldprice}</p>
                   </div>
                 </div>
               </div>
