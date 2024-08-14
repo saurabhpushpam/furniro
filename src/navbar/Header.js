@@ -14,6 +14,7 @@ const Header = () => {
 
   const navigate = useNavigate();
   const [user, setUser] = useState([]);
+  const [usertype, setusertype] = useState('');
 
 
   useEffect(() => {
@@ -21,6 +22,9 @@ const Header = () => {
       try {
         // Retrieve the token from local storage
         const token = localStorage.getItem('token');
+
+        const usertypedata = localStorage.getItem('usertype');
+        setusertype(usertypedata);
 
         if (!token) {
           console.error('No token found');
@@ -49,9 +53,22 @@ const Header = () => {
   }, []);
 
 
+  // const handleUserIconClick = () => {
+  //   if (user) {
+  //     if (user.usertype === 'admin') {
+  //       navigate('/user');
+  //     } else {
+  //       navigate('/userdetail');
+  //     }
+  //   } else {
+  //     console.error('User data is not available');
+  //   }
+  // };
+
+
   const handleUserIconClick = () => {
-    if (user) {
-      if (user.usertype === 'admin') {
+    if (usertype) {
+      if (usertype === 'admin') {
         navigate('/user');
       } else {
         navigate('/userdetail');
@@ -60,6 +77,9 @@ const Header = () => {
       console.error('User data is not available');
     }
   };
+
+
+
 
 
   const handlenavigate = () => {

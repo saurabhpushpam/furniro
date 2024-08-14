@@ -6,7 +6,8 @@ import {
 }
   from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-
+import { MdContactMail } from "react-icons/md";
+import { RiLogoutBoxLine } from "react-icons/ri";
 
 
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
@@ -67,6 +68,15 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </li>
         </Link>
 
+        <Link to="/user/contact" className='side-text-data'>
+          <li className='sidebar-list-item'>
+            {/* <a href=""> */}
+            <MdContactMail className='icon' />
+            Contact
+            {/* </a> */}
+          </li>
+        </Link>
+
         {/* <li className='sidebar-list-item'>
           <a href="">
             <BsMenuButtonWideFill className='icon' /> Reports
@@ -75,10 +85,13 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
         <Link to="/user/logout" className='side-text-data'>
           <li className='sidebar-list-item'>
             {/* <a href=""> */}
-            <BsFillGearFill className='icon' /> Logout
+            <RiLogoutBoxLine className='icon' />
+            Logout
             {/* </a> */}
           </li>
         </Link>
+
+
 
 
       </ul>

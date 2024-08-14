@@ -144,10 +144,143 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
+// import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 
+
+// import './App.css';
+// import Home from './components/home/Home';
+// import Footer from './navbar/Footer';
+// import Header from './navbar/Header';
+// import Shop from './components/Shop/Shop';
+// import CheckOut from './components/BillingDetails/CheckOut';
+// import Cart from './components/Cart/Cart'
+// import Contact from './components/Contact/Contact';
+// import Product from './components/Product/Product';
+// import Register from './RegisterLogin/Register';
+
+// import AdminDashboard from './Dashboard/AdminDashboard';
+// import AddCategory from './components/Product/AddCategory';
+// import Sidebar from './Dashboard/Sidebar';
+// import DashboardLayout from './Dashboard/DashboardLayout';
+// import ShowCategory from './components/Product/ShowCategory';
+// import ShowUser from './Dashboard/user/ShowUser';
+// import ShowOrder from './Dashboard/order/ShowOrder';
+// import ShowProduct from './components/Product/ShowProduct';
+// import Logout from './Dashboard/logout/Logout';
+// import UserDetail from './Dashboard/UserDetail';
+// import UserLogout from './Dashboard/logout/UserLogout';
+// import ProtectedRoute from './ProtectedRoutes';
+
+
+
+// function App() {
+
+//   const location = useLocation();
+//   const hideHeaderFooter = ['/signup', '/user', '/user/addcategory', '/user/product', '/user/order', '/user/getuser', "/user/logout"].includes(location.pathname);
+
+//   // const hideHeaderFooter = ['/signup'].includes(location.pathname);
+
+
+
+//   return (
+//     <>
+
+//       {!hideHeaderFooter && <Header />}
+
+//       <Routes>
+
+
+//         <Route path="/" element={<Home />} />
+//         <Route path="/signup" element={<Register />} />
+
+//         {/* Protected Routes */}
+//         <Route path="/user" element={<ProtectedRoute element={AdminDashboard} />} />
+//         <Route path="/user/addcategory" element={<ProtectedRoute element={ShowCategory} />} />
+//         <Route path="/user/getuser" element={<ProtectedRoute element={ShowUser} />} />
+//         <Route path="/user/order" element={<ProtectedRoute element={ShowOrder} />} />
+//         <Route path="/user/product" element={<ProtectedRoute element={ShowProduct} />} />
+//         <Route path="/user/logout" element={<ProtectedRoute element={Logout} />} />
+//         <Route path="/userdetail" element={<ProtectedRoute element={UserLogout} />} />
+
+//         <Route path="/shop/:id" element={<ProtectedRoute element={Product} />} />
+//         <Route path="/shop" element={<ProtectedRoute element={Shop} />} />
+//         <Route path="/cart" element={<ProtectedRoute element={Cart} />} />
+//         <Route path="/checkout" element={<ProtectedRoute element={CheckOut} />} />
+//         <Route path="/contact" element={<ProtectedRoute element={Contact} />} />
+//         <Route path="/product" element={<ProtectedRoute element={Product} />} />
+
+//         <Route path="*" element={<Navigate to="/signup" replace />} />
+//       </Routes>
+
+
+
+
+//       {!hideHeaderFooter && <Footer />}
+//       {/* <Footer></Footer> */}
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import './App.css';
 import Home from './components/home/Home';
@@ -155,70 +288,60 @@ import Footer from './navbar/Footer';
 import Header from './navbar/Header';
 import Shop from './components/Shop/Shop';
 import CheckOut from './components/BillingDetails/CheckOut';
-import Cart from './components/Cart/Cart'
+import Cart from './components/Cart/Cart';
 import Contact from './components/Contact/Contact';
 import Product from './components/Product/Product';
 import Register from './RegisterLogin/Register';
 
 import AdminDashboard from './Dashboard/AdminDashboard';
-import AddCategory from './components/Product/AddCategory';
-import Sidebar from './Dashboard/Sidebar';
-import DashboardLayout from './Dashboard/DashboardLayout';
 import ShowCategory from './components/Product/ShowCategory';
 import ShowUser from './Dashboard/user/ShowUser';
 import ShowOrder from './Dashboard/order/ShowOrder';
 import ShowProduct from './components/Product/ShowProduct';
 import Logout from './Dashboard/logout/Logout';
-import UserDetail from './Dashboard/UserDetail';
 import UserLogout from './Dashboard/logout/UserLogout';
 import ProtectedRoute from './ProtectedRoutes';
-
-
+import ShowContact from './components/Contact/ShowContact';
 
 function App() {
-
   const location = useLocation();
-  const hideHeaderFooter = ['/signup', '/user', '/user/addcategory', '/user/product', '/user/order', '/user/getuser', "/user/logout"].includes(location.pathname);
-
-  // const hideHeaderFooter = ['/signup'].includes(location.pathname);
-
-
+  const hideHeaderFooter = ['/signup', '/user', '/user/addcategory', '/user/product', '/user/order', '/user/getuser', "/user/logout", "/user/contact", "/userdetail"].includes(location.pathname);
 
   return (
     <>
-
       {!hideHeaderFooter && <Header />}
-
       <Routes>
+        {/* Public Routes */}
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/signup" element={localStorage.getItem('isLoggedin') ? <Navigate to="/" replace /> : <Register />} />
+
+        {/* Admin Protected Routes */}
+        <Route path="/user" element={<ProtectedRoute element={AdminDashboard} allowedRoles={['admin']} />} />
+        <Route path="/user/addcategory" element={<ProtectedRoute element={ShowCategory} allowedRoles={['admin']} />} />
+        <Route path="/user/getuser" element={<ProtectedRoute element={ShowUser} allowedRoles={['admin']} />} />
+        <Route path="/user/order" element={<ProtectedRoute element={ShowOrder} allowedRoles={['admin']} />} />
+        <Route path="/user/product" element={<ProtectedRoute element={ShowProduct} allowedRoles={['admin']} />} />
+        <Route path="/user/logout" element={<ProtectedRoute element={Logout} allowedRoles={['admin']} />} />
+        <Route path="/user/contact" element={<ProtectedRoute element={ShowContact} allowedRoles={['admin']} />} />
+
+        {/* <Route path="/userdetail" element={<ProtectedRoute element={UserLogout} allowedRoles={['admin']} />} /> */}
 
 
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Register />} />
 
-        {/* Protected Routes */}
-        <Route path="/user" element={<ProtectedRoute element={AdminDashboard} />} />
-        <Route path="/user/addcategory" element={<ProtectedRoute element={ShowCategory} />} />
-        <Route path="/user/getuser" element={<ProtectedRoute element={ShowUser} />} />
-        <Route path="/user/order" element={<ProtectedRoute element={ShowOrder} />} />
-        <Route path="/user/product" element={<ProtectedRoute element={ShowProduct} />} />
-        <Route path="/user/logout" element={<ProtectedRoute element={Logout} />} />
-        <Route path="/userdetail" element={<ProtectedRoute element={UserLogout} />} />
+        {/* User Protected Routes */}
+        <Route path="/" element={<ProtectedRoute element={Home} allowedRoles={['user']} />} />
+        <Route path="/shop/:id" element={<ProtectedRoute element={Product} allowedRoles={['user']} />} />
+        <Route path="/shop" element={<ProtectedRoute element={Shop} allowedRoles={['user']} />} />
+        <Route path="/cart" element={<ProtectedRoute element={Cart} allowedRoles={['user']} />} />
+        <Route path="/checkout" element={<ProtectedRoute element={CheckOut} allowedRoles={['user']} />} />
+        <Route path="/contact" element={<ProtectedRoute element={Contact} allowedRoles={['user']} />} />
+        <Route path="/product" element={<ProtectedRoute element={Product} allowedRoles={['user']} />} />
+        <Route path="/userdetail" element={<ProtectedRoute element={UserLogout} allowedRoles={['user']} />} />
 
-        <Route path="/shop/:id" element={<ProtectedRoute element={Product} />} />
-        <Route path="/shop" element={<ProtectedRoute element={Shop} />} />
-        <Route path="/cart" element={<ProtectedRoute element={Cart} />} />
-        <Route path="/checkout" element={<ProtectedRoute element={CheckOut} />} />
-        <Route path="/contact" element={<ProtectedRoute element={Contact} />} />
-        <Route path="/product" element={<ProtectedRoute element={Product} />} />
-
-        <Route path="*" element={<Navigate to="/signup" replace />} />
+        {/* Redirect unknown routes */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-
-
-
-
       {!hideHeaderFooter && <Footer />}
-      {/* <Footer></Footer> */}
     </>
   );
 }

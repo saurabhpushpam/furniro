@@ -616,13 +616,21 @@ p {
   
   /* border: 1px solid #007bff;  */
   border-radius: 5px;       
-  background-color: #0ea488; 
+  /* background-color: #0ea488;  */
   color: white;             
   cursor: pointer;          
   transition: background-color 0.3s ease; 
 
   width: 150px;
   height: 100px;
+}
+
+.adddatas{
+  background-color: orange;
+}
+
+.showsdatas{
+  background-color: rgb(2, 157, 2);
 }
 
 .selectbtn button:hover {

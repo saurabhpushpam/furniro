@@ -37,7 +37,7 @@ function ShowProduct() {
 
       <div className='selectbtn'>
 
-        <button
+        <button className='adddatas'
           onClick={() => {
             setShowAddProduct(true);
             setshowGetProduct(false);
@@ -49,7 +49,7 @@ function ShowProduct() {
           <b> Add Product </b>
         </button>
 
-        <button
+        <button className='adddatas'
           onClick={() => {
             setShowAddProduct(false);
             setshowGetProduct(false);
@@ -61,7 +61,7 @@ function ShowProduct() {
           <b> Add Product Varient</b>
         </button>
 
-        <button
+        <button className='showsdatas'
           onClick={() => {
             setshowGetProduct(false);
             setShowAddProduct(false);
@@ -70,7 +70,7 @@ function ShowProduct() {
 
           }}><b>Show Product</b> </button>
 
-        <button
+        <button className='showsdatas'
           onClick={() => {
             setshowGetProduct(true);
             setShowAddProduct(false);

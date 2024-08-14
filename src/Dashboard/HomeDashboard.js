@@ -55,7 +55,7 @@ function HomeDashboard() {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/getallorder');
+      const response = await axios.get('http://localhost:5000/api/getallneworder');
       setOrders(response.data.data.length);
       setLoading(false);
     } catch (err) {
@@ -86,7 +86,7 @@ function HomeDashboard() {
           <div className='card'>
             <div className='card-inner'>
               <h3>USERS</h3>
-              <BsFillArchiveFill className='card_icon' />
+              <BsPeopleFill className='card_icon' />
             </div>
             <h1>{user}</h1>
           </div>
@@ -106,7 +106,7 @@ function HomeDashboard() {
           <div className='card' id='cardthird'>
             <div className='card-inner'>
               <h3>PRODUCTS</h3>
-              <BsPeopleFill className='card_icon' />
+              <BsFillArchiveFill className='card_icon' />
             </div>
             <h1>{product}</h1>
           </div>

@@ -15,10 +15,16 @@
   align-items: center;
   justify-content: center;
   height: 25vh;
-  background-color: #f5f5f5;
+ 
+  /* background-color: #f5f5f5; */
   padding: 20px;
   box-sizing: border-box;
+
+margin-top: 50px;
+  /* border: 2px solid red; */
 }
+
+
 
 .logout-title {
   margin-bottom: 20px;

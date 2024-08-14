@@ -5,6 +5,10 @@ function Logout() {
   const handleYesClick = () => {
     // Remove the token from local storage
     localStorage.removeItem('token');
+    localStorage.removeItem('usertype');
+    localStorage.removeItem('isLoggedin');
+
+
     // Redirect to the login page or any other desired page after logout
     window.location.href = '/signup';
   };

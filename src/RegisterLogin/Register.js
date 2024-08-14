@@ -130,6 +130,9 @@ function App() {
 
           // Store the token in local storage
           localStorage.setItem('token', token);
+          localStorage.setItem('usertype', usertype);
+          localStorage.setItem('isLoggedin', true);
+
 
           if (usertype === 'admin') {
             window.location.href = '/user';

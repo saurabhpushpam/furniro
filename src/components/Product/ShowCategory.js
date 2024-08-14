@@ -23,14 +23,8 @@ function ShowCategory() {
 
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
       <div className='selectbtn'>
-        <button
-          onClick={() => {
-            setshowGetCategory(true);
-            setShowAddCategory(false);
 
-          }}><b>Show Category</b></button>
-
-        <button
+        <button className='adddatas'
           onClick={() => {
             setShowAddCategory(true);
             setshowGetCategory(false);
@@ -38,6 +32,15 @@ function ShowCategory() {
         >
           <b>Add Category</b>
         </button>
+
+        <button className='showsdatas'
+          onClick={() => {
+            setshowGetCategory(true);
+            setShowAddCategory(false);
+
+          }}><b>Show Category</b></button>
+
+
       </div>
 
       <div className='shows-container'>
