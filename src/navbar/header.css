@@ -28,6 +28,8 @@
   align-items: center;
   justify-content: start;
 
+  cursor: default;
+
   /* border: 5px solid peru; */
 
 }
@@ -61,13 +63,25 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px;
+  color: #000000;
 
-  margin-top: 15px;
+  /* margin-top: 10px; */
+  text-decoration: none;
 
   /* line-height: 24px; */
   /* text-align: center; */
 
   /* border: 2px solid red; */
+}
+
+.head-link-icon{
+  /* font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px; */
+  color: #000000;
+
+  margin-top: -5px;
+  text-decoration: none;
 }
 
 
