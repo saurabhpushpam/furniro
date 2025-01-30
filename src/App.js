@@ -283,7 +283,9 @@ import React from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import './App.css';
+
 import Home from './components/home/Home';
+
 import Footer from './navbar/Footer';
 import Header from './navbar/Header';
 import Shop from './components/Shop/Shop';
@@ -309,6 +311,14 @@ function App() {
 
   return (
     <>
+
+      {/* <Router>
+        <Route path="/about" component={Header} />
+      </Router> */}
+      <Header></Header>
+      <Home></Home>
+      <Footer></Footer>
+
       {!hideHeaderFooter && <Header />}
       <Routes>
         {/* Public Routes */}
@@ -342,6 +352,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
+
     </>
   );
 }
