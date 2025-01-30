@@ -1,0 +1,8 @@
+.divimg{
+  
+  background-image: url('../images/House_Logo.png');
+  background-repeat: no-repeat;
+  background-size: cover; /* This ensures the image covers the entire div */
+  background-position: center; /* This centers the image */
+
+}
